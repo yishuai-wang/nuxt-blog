@@ -1,17 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div>
-    <div class="test-content">
-      <header>
-        <NuxtLink class="btn" mx-2 my-4 to="/">
-          Home
-        </NuxtLink>
-        <NuxtLink class="btn" to="hello">
-          Hello
-        </NuxtLink>
-      </header>
-    </div>
-  </div>
-  <NuxtPage />
+  <AppLayout>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </AppLayout>
 </template>

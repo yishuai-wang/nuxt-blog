@@ -9,10 +9,7 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-  ],
+  shortcuts: [],
   presets: [
     presetUno(),
     presetAttributify(),
@@ -27,9 +24,28 @@ export default defineConfig({
   ],
   rules: [
     [
-      'hhh',
-      {
-        padding: '$dt(`space.4`)',
+      'els-backdrop-filter', {
+        'backdrop-filter': '$dt(`elements.backdrop.filter`)',
+      },
+    ],
+    [
+      /els-b(\w)$/,
+      ([_, w]) => {
+        const positionMap: Record<string, string> = {
+          t: 'top',
+          b: 'bottom',
+          l: 'left',
+          r: 'right',
+        }
+        const prop = w ? `border-${positionMap[w]}` : 'border'
+        return {
+          [prop]: '1px solid $dt(`elements.border.primary.static`)',
+        }
+      },
+    ],
+    [
+      'els-backdrop-color', {
+        background: '$dt(`elements.backdrop.background`)',
       },
     ],
   ],

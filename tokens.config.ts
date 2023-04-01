@@ -1,20 +1,35 @@
 import { defineTheme } from 'pinceau'
+import theme from '@nuxt-themes/tokens/config'
+
 export default defineTheme({
-  media: {
-    tablet: '(min-width: 768px)',
-    desktop: '(min-width: 1024px)',
-  },
   color: {
-    white: '#FFFFFF',
-    black: '#191919',
-    primary: '#ED4D31',
-    secondary: '#4560B0',
-    tertiary: '#FBEFDE',
+    // @ts-expect-error
+    primary: theme.color.ruby,
   },
-  space: {
-    1: '0.25rem',
-    2: '0.5rem',
-    3: '0.75rem',
-    4: '1rem',
+  elements: {
+    backdrop: {
+      filter: 'saturate(200%) blur(20px)',
+      background: {
+        initial: '#fffc',
+        dark: '#091a28cc',
+      },
+    },
+  },
+  blog: {
+    themes: {
+      background: {
+        static: {
+          dark: '#091a28',
+          light: '#fff',
+        },
+      },
+      color: {
+        static: {
+          dark: '#ebf4f1',
+          light: 'rgba(0, 0, 0, 80%)',
+        },
+      },
+
+    },
   },
 })

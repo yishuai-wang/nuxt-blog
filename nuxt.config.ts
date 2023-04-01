@@ -1,6 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createResolver } from '@nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 export default defineNuxtConfig({
+  extends: [
+    '@nuxt-themes/elements',
+    '@nuxt-themes/typography',
+  ],
   modules: [
+    '@nuxt-themes/tokens',
     'pinceau/nuxt',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
@@ -13,10 +22,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
   pinceau: {
-    preflight: 'antfu',
   },
   content: {
-    // documentDriven: true,
+    documentDriven: true,
     highlight: {
       theme: {
         default: 'material-ocean',
@@ -30,4 +38,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  components: [
+    '~/components',
+    {
+      prefix: '',
+      path: resolve('./components/app'),
+      global: true,
+    },
+  ],
 })
