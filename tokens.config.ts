@@ -31,5 +31,8 @@ export default defineTheme({
       },
 
     },
+    header: {
+      height: '4rem',
+    },
   },
 })

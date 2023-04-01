@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Container>
-      <slot />
-    </Container>
-  </div>
+  <ArticleLayout>
+    <slot />
+  </ArticleLayout>
 </template>

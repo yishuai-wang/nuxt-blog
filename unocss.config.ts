@@ -48,5 +48,11 @@ export default defineConfig({
         background: '$dt(`elements.backdrop.background`)',
       },
     ],
+    [
+      'post-grid-col',
+      {
+        'grid-template-columns': 'minmax(320px, 1fr) minmax(250px, 250px)',
+      },
+    ],
   ],
 })
