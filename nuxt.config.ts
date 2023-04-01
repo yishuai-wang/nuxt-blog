@@ -10,8 +10,24 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image-edge',
     '@nuxt/devtools',
+    '@nuxt/content',
   ],
   pinceau: {
     preflight: 'antfu',
+  },
+  content: {
+    // documentDriven: true,
+    highlight: {
+      theme: {
+        default: 'material-ocean',
+        light: 'light-plus',
+      },
+    },
+    markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 3,
+      },
+    },
   },
 })

@@ -14,6 +14,7 @@
     "@antfu/eslint-config": "^0.37.0",
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
+    "@nuxt/content": "^2.5.2",
     "@nuxt/devtools": "^0.3.1",
     "@nuxt/image-edge": "1.0.0-28000486.357efad",
     "@nuxtjs/color-mode": "^3.2.0",
